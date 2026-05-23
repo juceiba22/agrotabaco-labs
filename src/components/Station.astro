@@ -1,0 +1,41 @@
+---
+// src/components/Station.astro
+interface Props {
+  number: string;
+  problemTitle: string;
+  problemDesc: string;
+  problemQuote?: string;
+  solutionTitle: string;
+  solutionDesc: string;
+  impact: string;
+}
+
+const { number, problemTitle, problemDesc, problemQuote, solutionTitle, solutionDesc, impact } = Astro.props;
+---
+
+<section class="grid md:grid-cols-2 border-b border-[#d8cdb8]">
+  <!-- Diagnóstico del Libro (Claro) -->
+  <div class="bg-book-bg-alt p-10 md:p-16 flex flex-col justify-center border-r border-[#d8cdb8] reveal">
+    <span class="font-mono text-xs text-accent-red uppercase tracking-wider mb-4 font-semibold">{number} . El Diagnóstico del Libro</span>
+    <h2 class="font-serif text-3xl md:text-4xl text-text-book mb-6 leading-snug">{problemTitle}</h2>
+    <p class="text-text-book-muted leading-relaxed mb-8 text-lg" set:html={problemDesc}></p>
+    {problemQuote && (
+      <div class="border-l-2 border-accent-red pl-6 italic text-accent-red text-base font-serif">
+        {problemQuote}
+      </div>
+    )}
+  </div>
+  
+  <!-- La Solución (Oscuro) -->
+  <div class="bg-app-bg p-10 md:p-16 text-text-app flex flex-col justify-center reveal delay-100">
+    <div class="flex items-center gap-2 mb-4">
+      <span class="text-accent-gold">💡</span>
+      <span class="font-mono text-xs text-accent-gold uppercase tracking-wider font-semibold">La Solución en Tabar</span>
+    </div>
+    <h3 class="font-serif text-2xl md:text-3xl mb-6 text-accent-gold leading-snug">{solutionTitle}</h3>
+    <p class="text-text-app-muted text-base md:text-lg leading-relaxed mb-8" set:html={solutionDesc}></p>
+    <div class="bg-white/5 border border-white/10 rounded-lg p-5 font-mono text-sm text-green-400/90 shadow-lg shadow-black/20 backdrop-blur-sm">
+      <span class="font-bold text-green-400">⚡ IMPACTO:</span> {impact}
+    </div>
+  </div>
+</section>
