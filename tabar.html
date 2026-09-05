@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><title>TABAR Protocol — Financiamiento &amp; Tokenización RWA</title><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-tertiary":"#ffffff","outline-variant":"#c1c8c0","inverse-surface":"#29332b","surface-dim":"#d2ddd2","primary":"#012d15","on-surface-variant":"#414942","secondary":"#7e5700","tertiary-fixed-dim":"#afceb3","primary-fixed-dim":"#a4d1ae","on-secondary-fixed":"#281900","inverse-primary":"#a4d1ae","on-secondary-fixed-variant":"#604100","surface-container-highest":"#dbe5da","on-background":"#151e17","on-primary-container":"#84b08e","on-tertiary-fixed-variant":"#314d38","on-surface":"#151e17","on-primary-fixed":"#00210e","background":"#f2fcf1","tertiary-container":"#26412d","on-tertiary-container":"#8ead93","on-tertiary-fixed":"#05200f","surface-container-high":"#e1ebe0","outline":"#727971","surface-container":"#e6f1e5","surface-bright":"#f2fcf1","on-error-container":"#93000a","secondary-container":"#fdc668","on-secondary-container":"#765100","surface-container-low":"#ecf6eb","tertiary":"#102b19","surface":"#f2fcf1","primary-fixed":"#c0eec9","secondary-fixed-dim":"#f4bd60","surface-container-lowest":"#ffffff","surface-tint":"#3e674a","on-secondary":"#ffffff","primary-container":"#1a4329","on-primary-fixed-variant":"#264f34","error-container":"#ffdad6","inverse-on-surface":"#e9f4e8","tertiary-fixed":"#cbebcf","surface-variant":"#dbe5da","secondary-fixed":"#ffdeac","on-error":"#ffffff","on-primary":"#ffffff","error":"#ba1a1a"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"layout-gutter":"1.25rem","layout-margin-mobile":"1rem","space-2xs":"0.25rem","space-xs":"0.5rem","layout-margin-desktop":"2.5rem","layout-max-width":"88rem","space-2xl":"3rem","space-xl":"2rem","space-3xl":"4rem","space-md":"1rem","space-sm":"0.75rem","space-3xs":"0.125rem","space-lg":"1.5rem"},"fontFamily":{"body-md":["IBM Plex Sans"],"ticker-badge":["JetBrains Mono"],"headline-md":["\"Source Serif 4\""],"body-sm":["IBM Plex Sans"],"title-md":["IBM Plex Sans"],"data-mono":["JetBrains Mono"],"headline-lg-mobile":["\"Source Serif 4\""],"headline-sm":["\"Source Serif 4\""],"label-sm":["IBM Plex Sans"],"label-md":["IBM Plex Sans"],"headline-lg":["\"Source Serif 4\""],"body-lg":["\"Source Serif 4\""],"display":["\"Source Serif 4\""]},"fontSize":{"body-md":["14px",{"lineHeight":"22px","letterSpacing":"0em","fontWeight":"400"}],"ticker-badge":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}],"headline-md":["26px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"500"}],"body-sm":["12px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"400"}],"title-md":["16px",{"lineHeight":"24px","letterSpacing":"0.01em","fontWeight":"600"}],"data-mono":["13px",{"lineHeight":"18px","letterSpacing":"-0.02em","fontWeight":"500"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"0em","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.05em","fontWeight":"600"}],"label-md":["13px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}],"headline-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","letterSpacing":"0em","fontWeight":"400"}],"display":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-body-md text-on-surface"><header class="fixed top-0 w-full z-50 bg-tertiary shadow-[0_4px_20px_rgba(0,0,0,0.2)]"><div class="h-20 max-w-layout-max-width mx-auto px-layout-margin-mobile lg:px-layout-margin-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><div class="flex flex-col"><div class="flex items-center gap-space-xs"><a class="flex items-center gap-space-2xs text-on-tertiary-fixed-variant hover:text-on-tertiary font-label-sm text-label-sm transition-colors" href="index.html"><span class="material-symbols-outlined text-[14px]">arrow_back</span><span>Volver a AgroTabaco Labs</span></a></div><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-tertiary tracking-tight">TABAR Protocol</span><span class="font-ticker-badge text-ticker-badge bg-tertiary-container text-on-tertiary-container px-space-xs py-space-3xs rounded">AgroTabaco Labs Venture</span></div></div><nav class="hidden xl:flex items-center gap-space-md pl-space-md" data-active-classes="text-on-tertiary font-title-md"><a class="text-tertiary-fixed-dim hover:text-on-tertiary font-body-md text-body-md transition-colors" data-path="protocolo-warrants" href="#">Protocolo &amp; Warrants</a><a class="text-tertiary-fixed-dim hover:text-on-tertiary font-body-md text-body-md transition-colors" data-path="para-acopiadores" href="#">Para Acopiadores</a><a class="text-tertiary-fixed-dim hover:text-on-tertiary font-body-md text-body-md transition-colors" data-path="para-dealers-inversores" href="#">Para Dealers &amp; Inversores</a><a class="text-tertiary-fixed-dim hover:text-on-tertiary font-body-md text-body-md transition-colors" data-path="roadmap-web3" href="#">Roadmap Web3</a></nav></div><div class="flex items-center gap-space-sm"><a class="hidden sm:inline-flex items-center justify-center font-label-md text-label-md text-on-tertiary bg-transparent hover:bg-tertiary-container px-space-md py-space-xs rounded transition-colors" data-path="documentacion-whitepaper" href="#">Documentación / Whitepaper</a><a class="inline-flex items-center justify-center font-label-md text-label-md bg-secondary text-on-secondary hover:bg-on-secondary-fixed-variant px-space-md py-space-xs rounded transition-colors" data-path="portal-warrants" href="https://tabar-coral.vercel.app/" rel="noopener" target="_blank">Ingresar a la Plataforma</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<!-- Ticker Live Telemetry Bar -->
+<div class="w-full bg-tertiary text-on-tertiary py-space-xs px-layout-margin-mobile lg:px-layout-margin-desktop border-b border-primary-container">
+<div class="max-w-layout-max-width mx-auto flex flex-wrap items-center justify-between gap-space-sm font-data-mono text-data-mono">
+<div class="flex items-center gap-space-md overflow-x-auto py-1">
+<span class="inline-flex items-center gap-1.5 px-space-xs py-0.5 rounded bg-primary-container text-on-primary-container text-ticker-badge font-ticker-badge">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container animate-pulse"></span>
+          AUDITORÍA EN VIVO
+        </span>
+<div class="flex items-center gap-space-xs">
+<span class="text-outline-variant">VALLE DE LERMA HUB:</span>
+<span class="text-on-tertiary font-semibold">99.4% HUMEDAD ÓPTIMA</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-space-xs">
+<span class="text-outline-variant">PERICO HUB:</span>
+<span class="text-on-tertiary font-semibold">CUSTODIA ACTIVA</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-space-xs">
+<span class="text-outline-variant">SAGyP MATRIZ:</span>
+<span class="text-primary-fixed font-semibold">LEY 9.643 CONFORME</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm text-ticker-badge font-ticker-badge text-outline-variant">
+<span>RED TABAR v1.2</span>
+<span class="text-secondary-fixed">SALTA &amp; JUJUY CORREDOR</span>
+</div>
+</div>
+</div>
+<!-- Hero Master Unit -->
+<section class="w-full py-space-2xl px-layout-margin-mobile lg:px-layout-margin-desktop bg-surface">
+<div class="max-w-layout-max-width mx-auto">
+<!-- Eyebrow Tag -->
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-high rounded-DEFAULT mb-space-md">
+<span class="material-symbols-outlined text-[15px] text-secondary">token</span>
+<span class="font-ticker-badge text-ticker-badge text-primary uppercase tracking-wider">MERCADO DIGITAL &amp; TOKENIZACIÓN RWA · AGROTABACO LABS</span>
+</div>
+<!-- Hero Asymmetric Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<div class="lg:col-span-7 flex flex-col justify-between">
+<div class="flex flex-col gap-space-md">
+<h1 class="font-display text-headline-lg lg:text-display text-primary leading-tight">
+              La solución a la liquidez del sector tabacalero argentino.
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+              TABAR Protocol transforma los warrants de tabaco físico acopiado en activos digitales colaterales para financiamiento inmediato de capital de trabajo, reduciendo costos de intermediación bancaria para cooperativas y acopiadores del NOA.
+            </p>
+</div>
+<!-- CTAs and Badges -->
+<div class="flex flex-wrap items-center gap-space-md pt-space-xl pb-space-lg">
+<a class="inline-flex items-center gap-space-xs px-space-lg py-space-sm bg-primary text-on-primary rounded font-label-md text-label-md shadow-md hover:bg-tertiary transition-colors" href="https://tabar-coral.vercel.app/" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>Ingresar a la Plataforma</span>
+</a>
+<a class="inline-flex items-center gap-space-xs px-space-lg py-space-sm bg-surface-container-lowest text-primary rounded font-label-md text-label-md shadow-sm hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">article</span>
+<span>Conocer el Whitepaper v1.2</span>
+</a>
+</div>
+<!-- Institutional Sub-notes -->
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-space-md pt-space-md text-on-surface-variant">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Garantía Real</span>
+<span class="font-title-md text-title-md text-primary">Tabaco en Acopio</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Mitigación FET</span>
+<span class="font-title-md text-title-md text-primary">Anticipo Operativo</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Trazabilidad</span>
+<span class="font-title-md text-title-md text-primary">IoT &amp; Telemetría</span>
+</div>
+</div>
+</div>
+<!-- Visual Hero Asset: Tech Warehouse with Data Overlays -->
+<div class="lg:col-span-5 flex flex-col gap-space-sm">
+<div class="relative overflow-hidden rounded-lg shadow-xl bg-surface-container-highest">
+<img class="w-full h-[440px] object-cover" data-alt="Modern high-ceiling industrial tobacco curing warehouse in Salta Argentina packed with hundreds of heavy hessian-wrapped tobacco bales on wooden pallets. Glowing teal and gold digital holographic telemetry HUD displays float in mid-air projecting RWA tokenization metrics, commodity grade indices, barcode verifications, and market charts. Moody cinematic industrial lighting with sunbeams cutting through high warehouse windows and automated AGV carts navigating the concrete aisles." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0UBIbR2DYdsLttlJ6yVhS72VIvDmj2CtsMw5H9-Wb92LynnGEnpl_lyNpyyoki0pmDH_jIDWnqf5IQMjFxAd2u_ilVt4KLVuP6YSGE7uyDwIvmCHUXtOoAEkPOf-PRTqjdBzP3_2Jk0aNGE7aS4ONtlniOdJqyqZD936hkag0RN-iVDp7CXShrh_Z-bxFBRB0mZd1vFYnAzuE9iuVO-vfczDTLsLnab3kIs68OhH5iHKB-cYacMcO4A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-tertiary/90 via-tertiary/20 to-transparent"></div>
+<div class="absolute top-4 left-4 inline-flex items-center gap-1.5 px-2.5 py-1 bg-tertiary/80 backdrop-blur rounded text-ticker-badge font-ticker-badge text-on-tertiary">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed animate-ping"></span>
+              CUSTODIA FISICA HOMOLOGADA
+            </div>
+<div class="absolute bottom-4 left-4 right-4 bg-tertiary/90 backdrop-blur p-space-sm rounded text-on-tertiary flex items-center justify-between">
+<div>
+<p class="font-label-sm text-label-sm text-tertiary-fixed-dim uppercase">Depósito Matriz #04</p>
+<p class="font-body-md text-body-md font-semibold">Valle de Lerma &amp; Perico</p>
+</div>
+<div class="text-right">
+<span class="font-data-mono text-data-mono text-secondary-fixed">WARRANT-AR-2026</span>
+<p class="font-label-sm text-label-sm text-outline-variant">SAGyP Reg. 9643/24</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">inventory_2</span>
+<span>Lote Balizado: Virginia L1 / L2 Standard</span>
+</div>
+<span class="font-data-mono text-data-mono text-primary font-medium">100% AUDITADO</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Live Protocol Metrics Bar -->
+<section class="w-full bg-surface-container-high py-space-lg px-layout-margin-mobile lg:px-layout-margin-desktop">
+<div class="max-w-layout-max-width mx-auto">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Metric 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Warrants Colateralizados</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">account_balance</span>
+</div>
+<div class="pt-space-xs">
+<div class="font-headline-lg text-headline-lg text-primary">$4.850.000 <span class="text-body-md font-data-mono text-secondary font-medium">USD</span></div>
+<div class="flex items-center gap-space-xs mt-1 text-label-sm font-label-sm text-on-surface-variant">
+<span class="inline-flex items-center text-primary font-bold">↑ 18.4%</span>
+<span>vs. ciclo previo</span>
+</div>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Tabaco en Custodia</span>
+<span class="material-symbols-outlined text-primary text-[20px]">warehouse</span>
+</div>
+<div class="pt-space-xs">
+<div class="font-headline-lg text-headline-lg text-primary">1.280 <span class="text-body-md font-data-mono text-on-surface-variant">Tn</span></div>
+<div class="flex items-center gap-space-xs mt-1 text-label-sm font-label-sm text-on-surface-variant">
+<span class="text-primary font-semibold">Virginia Grado 1</span>
+<span>en silos certificados</span>
+</div>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">TNA Promedio Colateral</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">trending_up</span>
+</div>
+<div class="pt-space-xs">
+<div class="font-headline-lg text-headline-lg text-primary">7.2% <span class="text-body-md font-data-mono text-secondary font-medium">USD</span></div>
+<div class="flex items-center gap-space-xs mt-1 text-label-sm font-label-sm text-on-surface-variant">
+<span class="text-primary font-semibold">Rendimiento institucional</span>
+<span>fijo</span>
+</div>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Tiempo de Liquidación</span>
+<span class="material-symbols-outlined text-primary text-[20px]">bolt</span>
+</div>
+<div class="pt-space-xs">
+<div class="font-headline-lg text-headline-lg text-primary">&lt; 48 <span class="text-body-md font-data-mono text-on-surface-variant">Horas</span></div>
+<div class="flex items-center gap-space-xs mt-1 text-label-sm font-label-sm text-on-surface-variant">
+<span class="text-primary font-semibold">Desembolso T+2</span>
+<span>vs 90 días tradicionales</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Modules Section -->
+<section class="w-full py-space-3xl px-layout-margin-mobile lg:px-layout-margin-desktop bg-surface-container-low">
+<div class="max-w-layout-max-width mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-space-md">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<span class="font-ticker-badge text-ticker-badge text-secondary uppercase tracking-widest">Ecosistema Institucional</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Digitalizá el tabaco y obtené beneficios</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Infraestructura técnica que unifica la fiscalización física agronómica con el mercado de capitales argentino e internacional.
+          </p>
+</div>
+<div class="font-data-mono text-data-mono text-on-surface-variant bg-surface-container px-space-sm py-space-xs rounded">
+          SISTEMA AUDITADO · LEY 9.643
+        </div>
+</div>
+<!-- Bento Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Module Card 1 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-lg shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex flex-col">
+<div class="w-12 h-12 rounded bg-surface-container-high flex items-center justify-center text-primary mb-space-md">
+<span class="material-symbols-outlined text-[28px]">agriculture</span>
+</div>
+<span class="font-ticker-badge text-ticker-badge text-secondary font-semibold uppercase mb-space-2xs">Originadores de Carga</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-space-sm">Módulo Acopiadores &amp; Cooperativas</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
+              Los acopiadores solicitan financiamiento inmediato en el mercado institucional respaldado por warrants de tabaco físico homologado por SAGyP, evitando la espera del pago de exportación o demoras del FET.
+            </p>
+<ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface mb-space-md">
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[16px]">check_circle</span>
+<span>Adelanto de liquidez sobre acopio certificado</span>
+</li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[16px]">check_circle</span>
+<span>Cobertura frente a desfases de liquidación FET</span>
+</li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[16px]">check_circle</span>
+<span>Cero desprendimiento de la tenencia agronómica</span>
+</li>
+</ul>
+</div>
+<div class="pt-space-md bg-surface-container-low -mx-space-lg -mb-space-lg px-space-lg py-space-sm rounded-b-lg flex items-center justify-between">
+<span class="font-data-mono text-data-mono text-on-surface-variant">Límite por Lote: USD 500k+</span>
+<span class="material-symbols-outlined text-primary text-[20px]">arrow_forward</span>
+</div>
+</div>
+<!-- Module Card 2 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-lg shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex flex-col">
+<div class="w-12 h-12 rounded bg-surface-container-high flex items-center justify-center text-secondary mb-space-md">
+<span class="material-symbols-outlined text-[28px]">candlestick_chart</span>
+</div>
+<span class="font-ticker-badge text-ticker-badge text-secondary font-semibold uppercase mb-space-2xs">Fondeo Institucional</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-space-sm">Módulo Dealers &amp; Fondos de Inversión</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
+              Dealers e inversores calificados operan fondeando warrants con rendimientos en moneda dura, respaldados 1 a 1 por tabaco físico auditable en galpones autorizados.
+            </p>
+<ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface mb-space-md">
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>Retornos predecibles respaldados por commodity tangible</span>
+</li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>Monitoreo telemétrico de humedad y temperatura 24/7</span>
+</li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>Ejecución contractual expedita sin riesgo de contraparte</span>
+</li>
+</ul>
+</div>
+<div class="pt-space-md bg-surface-container-low -mx-space-lg -mb-space-lg px-space-lg py-space-sm rounded-b-lg flex items-center justify-between">
+<span class="font-data-mono text-data-mono text-on-surface-variant">TIR Objetivo: 6.8% – 8.5% USD</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">arrow_forward</span>
+</div>
+</div>
+<!-- Module Card 3 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-lg shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex flex-col">
+<div class="w-12 h-12 rounded bg-surface-container-high flex items-center justify-center text-primary mb-space-md">
+<span class="material-symbols-outlined text-[28px]">hub</span>
+</div>
+<span class="font-ticker-badge text-ticker-badge text-secondary font-semibold uppercase mb-space-2xs">Arquitectura de Activos</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-space-sm">Tokenización RWA &amp; Custodia</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
+              Infraestructura de auditoría y emisión de certificados digitales bajo Ley 9.643 de Warrants y cotejo estricto con el Registro Nacional de SAGyP.
+            </p>
+<ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface mb-space-md">
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[16px]">check_circle</span>
+<span>Firma electrónica calificada y sello de tiempo legal</span>
+</li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[16px]">check_circle</span>
+<span>Integración directa con balanzas y precintos de acopio</span>
+</li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[16px]">check_circle</span>
+<span>Homologación fiduciaria con bancos y brokers locales</span>
+</li>
+</ul>
+</div>
+<div class="pt-space-md bg-surface-container-low -mx-space-lg -mb-space-lg px-space-lg py-space-sm rounded-b-lg flex items-center justify-between">
+<span class="font-data-mono text-data-mono text-on-surface-variant">Protocolo: Dual Ledger Ready</span>
+<span class="material-symbols-outlined text-primary text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Process & Workflow Visualizer -->
+<section class="w-full py-space-2xl px-layout-margin-mobile lg:px-layout-margin-desktop bg-surface">
+<div class="max-w-layout-max-width mx-auto">
+<div class="bg-primary text-on-primary rounded-xl p-space-xl overflow-hidden relative shadow-lg">
+<div class="relative z-10 flex flex-col gap-space-lg">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div>
+<span class="font-ticker-badge text-ticker-badge text-primary-fixed uppercase">Flujo Operativo de Garantía</span>
+<h3 class="font-headline-md text-headline-md text-on-primary mt-1">Cómo opera el ciclo de colateralización TABAR</h3>
+</div>
+<div class="flex items-center gap-space-xs text-ticker-badge font-ticker-badge bg-primary-container px-space-sm py-1 rounded text-primary-fixed">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+              RESOLUCIÓN SAGyP 2026
+            </div>
+</div>
+<!-- Flow Chart Visual -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-md pt-space-md">
+<!-- Step 1 -->
+<div class="bg-primary-container/60 p-space-md rounded flex flex-col justify-between">
+<div>
+<span class="font-data-mono text-data-mono text-secondary-fixed">01 / INGRESO</span>
+<h4 class="font-title-md text-title-md text-on-primary mt-space-xs">Pesaje &amp; Tipificación</h4>
+<p class="font-body-sm text-body-sm text-tertiary-fixed-dim mt-space-2xs">
+                  El tabaco llega a la cooperativa en Salta o Jujuy. Se califica calidad, humedad y se genera el Certificado de Depósito.
+                </p>
+</div>
+<div class="pt-space-md text-secondary-container flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">scale</span>
+<span>Sensor telemétrico</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="bg-primary-container/60 p-space-md rounded flex flex-col justify-between">
+<div>
+<span class="font-data-mono text-data-mono text-secondary-fixed">02 / CERTIFICACIÓN</span>
+<h4 class="font-title-md text-title-md text-on-primary mt-space-xs">Emisión Warrant Ley 9.643</h4>
+<p class="font-body-sm text-body-sm text-tertiary-fixed-dim mt-space-2xs">
+                  Validación registral con la empresa emisora autorizada. El warrant queda legalmente constituido y endosable.
+                </p>
+</div>
+<div class="pt-space-md text-secondary-container flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">gavel</span>
+<span>Validez ejecutiva</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="bg-primary-container/60 p-space-md rounded flex flex-col justify-between">
+<div>
+<span class="font-data-mono text-data-mono text-secondary-fixed">03 / DIGITALIZACIÓN</span>
+<h4 class="font-title-md text-title-md text-on-primary mt-space-xs">Colateralización TABAR</h4>
+<p class="font-body-sm text-body-sm text-tertiary-fixed-dim mt-space-2xs">
+                  Carga en el libro digital institucional de TABAR. Notificación al mercado de dealers e inversores aprobados.
+                </p>
+</div>
+<div class="pt-space-md text-secondary-container flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">sync_alt</span>
+<span>Matching digital</span>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="bg-primary-container/60 p-space-md rounded flex flex-col justify-between">
+<div>
+<span class="font-data-mono text-data-mono text-secondary-fixed">04 / LIQUIDACIÓN</span>
+<h4 class="font-title-md text-title-md text-on-primary mt-space-xs">Fondeo Inmediato</h4>
+<p class="font-body-sm text-body-sm text-tertiary-fixed-dim mt-space-2xs">
+                  Desembolso en cuenta bancaria en menos de 48 hs. El productor y acopiador abonan al cobrar la exportación.
+                </p>
+</div>
+<div class="pt-space-md text-secondary-container flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">payments</span>
+<span>Capital de trabajo</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Architecture & Roadmap (Web2 to Web3) -->
+<section class="w-full py-space-3xl px-layout-margin-mobile lg:px-layout-margin-desktop bg-surface-container">
+<div class="max-w-layout-max-width mx-auto">
+<div class="flex flex-col gap-space-2xs mb-space-xl">
+<span class="font-ticker-badge text-ticker-badge text-secondary uppercase tracking-widest">Evolución de Protocolo</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Roadmap Técnico: De Web2 a Web3</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+          Estrategia pragmática de implementación. Primero consolidamos el cumplimiento fiduciario exigido por los reguladores argentinos, habilitando posteriormente la composabilidad abierta en redes públicas.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- Phase 1: Current -->
+<div class="bg-surface-container-lowest p-space-xl rounded-lg shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 right-0 px-space-md py-1 bg-primary text-on-primary font-ticker-badge text-ticker-badge rounded-bl">
+            FASE 1 · ACTIVA (ENERO 2026)
+          </div>
+<div>
+<div class="flex items-center gap-space-xs mb-space-sm">
+<span class="w-3 h-3 rounded-full bg-primary animate-pulse"></span>
+<span class="font-data-mono text-data-mono text-primary font-bold">Gobernanza Web2 &amp; Legal</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-space-md">Matriz Centralizada SAGyP &amp; PDF Verificables</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
+              Validación de identidad KYC/KYB para personas jurídicas, consistencia transaccional atómica en base de datos PostgreSQL particionada con alta disponibilidad, emisión automatizada de comprobantes contractuales con hash SHA-256 e integración fiduciaria conforme a la Ley 9.643.
+            </p>
+<div class="space-y-space-xs bg-surface-container-low p-space-md rounded font-data-mono text-data-mono text-on-surface mb-space-md">
+<div class="flex justify-between">
+<span class="text-on-surface-variant">KYC/KYB Matriz:</span>
+<span class="text-primary font-semibold">AFIP + Registro SAGyP</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Integridad de Archivos:</span>
+<span class="text-primary font-semibold">SHA-256 PDF Timestamping</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Custodia Física:</span>
+<span class="text-primary font-semibold">Auditorías In-Situ Valle de Lerma</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Moneda de Liquidación:</span>
+<span class="text-primary font-semibold">Transferencia Bancaria USD / MEP</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Implementado y operable en cooperativas adheridas</span>
+</div>
+</div>
+<!-- Phase 2: Future Web3 -->
+<div class="bg-surface-container-lowest p-space-xl rounded-lg shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 right-0 px-space-md py-1 bg-secondary text-on-secondary font-ticker-badge text-ticker-badge rounded-bl">
+            FASE 2 · Q3-Q4 2026
+          </div>
+<div>
+<div class="flex items-center gap-space-xs mb-space-sm">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="font-data-mono text-data-mono text-secondary font-bold">Protocolo Descentralizado &amp; Smart Contracts</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-space-md">Tokenización ERC-3643 &amp; Stablecoin Liquidity</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
+              Sustitución progresiva de balances contables por contratos inteligentes auditados bajo el estándar de activos regulados ERC-3643. Creación de pools de liquidez colateralizada con stablecoins permisionadas (USDC/USDT) para habilitar un mercado secundario 24/7 y financiamiento global sin fricción cambiaria.
+            </p>
+<div class="space-y-space-xs bg-surface-container-low p-space-md rounded font-data-mono text-data-mono text-on-surface mb-space-md">
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Estándar de Token:</span>
+<span class="text-secondary font-semibold">ERC-3643 Permissioned RWA</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Capa de Liquidación:</span>
+<span class="text-secondary font-semibold">Ethereum L2 (Arbitrum / Polygon)</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Pools de Liquidez:</span>
+<span class="text-secondary font-semibold">Automated AMM para Warrants</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Oráculos de Telemetría:</span>
+<span class="text-secondary font-semibold">Chainlink Proof of Reserve (PoR)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+<span>Contratos en desarrollo en Testnet AgroTabaco Labs</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Agronomic Vaults Map & Locations Strip -->
+<section class="w-full py-space-2xl px-layout-margin-mobile lg:px-layout-margin-desktop bg-surface">
+<div class="max-w-layout-max-width mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<div class="lg:col-span-5 flex flex-col gap-space-sm">
+<span class="font-ticker-badge text-ticker-badge text-secondary uppercase">Red de Almacenes Fiscalizados</span>
+<h3 class="font-headline-md text-headline-md text-primary">Presencia en los polos tabacaleros del NOA</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Nuestros galpones cuentan con sensores certificados de humedad de hoja, pesaje calibrado por el INTI y transmisión remota a la plataforma TABAR.
+          </p>
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="p-space-sm bg-surface-container-high rounded flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary">domain</span>
+<div>
+<p class="font-title-md text-title-md text-primary">Centro Logístico Valle de Lerma</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Rosario de Lerma, Salta</p>
+</div>
+</div>
+<span class="font-data-mono text-data-mono text-primary font-bold">850 Tn Capacidad</span>
+</div>
+<div class="p-space-sm bg-surface-container-high rounded flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary">domain</span>
+<div>
+<p class="font-title-md text-title-md text-primary">Hub de Custodia Perico</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ciudad de Perico, Jujuy</p>
+</div>
+</div>
+<span class="font-data-mono text-data-mono text-primary font-bold">1.100 Tn Capacidad</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7">
+<div class="w-full h-80 rounded-lg shadow-md bg-cover bg-center overflow-hidden relative" data-location="Rosario de Lerma, Salta, Argentina" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDqT3Xd1m9xXMVM2iCRgNi2kmy4prOd7Xu8-2bDF0Nlzi_LIp5QS0Kvgi48W1wG1MKlT4zJBacgchnelkv5kbvG95eumxcf67KOng8_CdzwstBX7qJ0MsmPoFkyhj0H-AU0CUyne1QS-RIpV0xwR5z6uelMs7R_FKUahrm_TS2Iql2MB6i6Xq3khd-jbNcmG9KwgDkuYrp6eD9k74aQGzkNdtwGHkJGEoFVi6OxibiMSYhYq7wpTmFPiw')">
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[1px]"></div>
+<div class="absolute bottom-4 left-4 bg-surface/95 backdrop-blur p-space-sm rounded shadow-lg">
+<div class="flex items-center gap-space-xs font-label-md text-label-md text-primary">
+<span class="material-symbols-outlined text-[18px] text-secondary">pin_drop</span>
+<span>Salta &amp; Jujuy Corredor Productivo</span>
+</div>
+<p class="font-data-mono text-data-mono text-on-surface-variant mt-0.5">S 24° 59' 12'' / W 65° 34' 45''</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Institutional CTA & Onboarding Form Block -->
+<section class="w-full py-space-3xl px-layout-margin-mobile lg:px-layout-margin-desktop bg-surface-container-high">
+<div class="max-w-layout-max-width mx-auto">
+<div class="bg-surface-container-lowest rounded-xl p-space-xl lg:p-space-2xl shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-start">
+<!-- Left Column: Context & Contacts -->
+<div class="lg:col-span-6 flex flex-col gap-space-md">
+<div class="inline-flex items-center gap-space-xs px-space-xs py-space-3xs bg-surface-container rounded text-ticker-badge font-ticker-badge text-secondary uppercase">
+            Onboarding Institucional
+          </div>
+<h2 class="font-headline-lg text-headline-lg text-primary">
+            ¿Sos acopiador, cooperativa o dealer financiero?
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Integrate a la red de financiamiento basada en warrants de tabaco con custodia verificable. Nuestro equipo legal y agronómico asiste en la auditoría de galpones y la estructuración del libro de deuda.
+          </p>
+<div class="flex flex-col gap-space-sm pt-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Contacto Directo de Mesa</span>
+<a class="font-title-md text-title-md text-primary hover:underline" href="mailto:redaccion@agrotabaco.com.ar">redaccion@agrotabaco.com.ar</a>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sedes de Operación</span>
+<span class="font-title-md text-title-md text-primary">Salta Capital &amp; CABA, Argentina</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">policy</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Marco Legal</span>
+<span class="font-title-md text-title-md text-primary">Ley 9.643 de Warrants &amp; Certificados de Depósito</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Lead Form -->
+<div class="lg:col-span-6 bg-surface-container-low p-space-lg rounded-lg">
+<form class="flex flex-col gap-space-md" onsubmit="event.preventDefault(); document.getElementById('form-feedback').classList.remove('hidden');">
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-md text-label-md text-primary font-semibold">Tipo de Entidad</label>
+<select class="w-full bg-surface-container-lowest p-space-sm rounded font-body-md text-body-md text-on-surface focus:outline-none">
+<option>Acopiador Independiente</option>
+<option>Cooperativa Tabacalera</option>
+<option>Dealer / ALyC / Fondo de Inversión</option>
+<option>Exportador / Dealer Internacional</option>
+</select>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-md text-label-md text-primary font-semibold">Nombre o Razón Social</label>
+<input class="w-full bg-surface-container-lowest p-space-sm rounded font-body-md text-body-md text-on-surface focus:outline-none" placeholder="Ej. Cooperativa Tabacalera..." required="" type="text"/>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-md text-label-md text-primary font-semibold">CUIT / Tax ID</label>
+<input class="w-full bg-surface-container-lowest p-space-sm rounded font-body-md text-body-md text-on-surface focus:outline-none" placeholder="30-XXXXXXXX-X" required="" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-md text-label-md text-primary font-semibold">Correo Electrónico</label>
+<input class="w-full bg-surface-container-lowest p-space-sm rounded font-body-md text-body-md text-on-surface focus:outline-none" placeholder="contacto@entidad.com.ar" required="" type="email"/>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-md text-label-md text-primary font-semibold">Volumen Estimado (Tn o USD)</label>
+<input class="w-full bg-surface-container-lowest p-space-sm rounded font-body-md text-body-md text-on-surface focus:outline-none" placeholder="Ej. 200 Tn Virginia" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-md text-label-md text-primary font-semibold">Consulta o Ubicación de Galpón</label>
+<textarea class="w-full bg-surface-container-lowest p-space-sm rounded font-body-md text-body-md text-on-surface focus:outline-none" placeholder="Detalle ubicación de acopio o ticket de inversión solicitado..." rows="3"></textarea>
+</div>
+<button class="w-full py-space-sm bg-primary text-on-primary rounded font-label-md text-label-md hover:bg-tertiary transition-colors flex items-center justify-center gap-space-xs shadow-md" type="submit">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Solicitar Auditoría de Galpón &amp; Onboarding</span>
+</button>
+<div class="hidden p-space-sm bg-primary-fixed text-on-primary-fixed rounded font-body-sm text-body-sm flex items-center gap-space-xs" id="form-feedback">
+<span class="material-symbols-outlined text-[18px]">check</span>
+<span>Solicitud recibida. La mesa técnica de AgroTabaco Labs se contactará en 24 hs hábiles.</span>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container py-space-xl"><div class="max-w-layout-max-width mx-auto px-layout-margin-mobile lg:px-layout-margin-desktop"><div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg pb-space-lg"><div class="flex flex-col gap-space-2xs"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-primary">TABAR Protocol</span><span class="font-ticker-badge text-ticker-badge text-secondary bg-surface-container-highest px-space-xs py-space-3xs rounded">Infraestructura RWA</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-xl">Subsidiaria de AgroTabaco Labs. Digitalización soberana, custodia agronómica y emisión fiduciaria de certificados de depósito y warrants de tabaco Virginia y Criollo.</p></div><div class="flex flex-col items-start md:items-end gap-space-xs"><div class="inline-flex items-center gap-space-xs bg-surface-container-lowest px-space-sm py-space-2xs rounded shadow-[0_1px_4px_rgba(0,0,0,0.04)]"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="font-data-mono text-data-mono text-on-surface">Protocolo v1.2 Activo</span></div><span class="font-label-sm text-label-sm text-on-surface-variant">Mainnet Ag-Telemetry Validated</span></div></div><div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm pt-space-md"><div class="flex flex-wrap items-center gap-space-md text-on-surface-variant font-label-sm text-label-sm"><span>Marco Regulatorio: SAGyP (Secretaría de Agricultura, Ganadería y Pesca)</span><span>•</span><span>Ley de Warrants N° 9.643</span><span>•</span><span>AFIP / CUIT Certificada</span></div><div class="font-body-sm text-body-sm text-on-surface-variant">© 2026 AgroTabaco Labs. Todos los derechos reservados.</div></div></div></footer></body></html>
